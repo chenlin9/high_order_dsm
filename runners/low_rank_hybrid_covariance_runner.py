@@ -33,9 +33,9 @@ class LowRankHybridRunner(object):
             raise Exception('{} loss function not in {dsm, dsm_vr}'.format(self.config.loss))
 
         if self.config.loss == "dsm":
-            self.loss_op2 = hosm
+            self.loss_op2 = hosm_low_rank
         elif self.config.loss == "dsm_vr":
-            self.loss_op2 = hosm_plus_vr
+            self.loss_op2 = hosm_plus_vr_low_rank
         else:
             raise Exception('{} loss function not in {dsm, dsm_vr}'.format(self.config.loss))
 
