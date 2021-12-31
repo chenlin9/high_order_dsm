@@ -1,0 +1,37 @@
+#### training:
+loss: "dsm"
+rank: 50
+
+model:
+  ema: True
+  ema_rate: 0.999
+  sigma_begin: 1
+  sigma_end: 0.01
+  num_classes: 1
+  batch_norm: false
+  ### configurations for CIFAR10
+  ngf: 128
+
+## CIFAR10
+dataset: CIFAR10
+data_dir: data/cifar10
+channel: 3
+img: 32
+
+# for unet configuration
+data:
+  ## mnist
+  dataset: "CIFAR10"
+  image_size: 32
+  channels: 3
+  random_flip: true
+
+batch_size: 80
+lr: 0.0002
+lr_decay: 0.999995
+max_epochs: 200
+
+#### logging
+print_every: 50
+save_interval: 10
+

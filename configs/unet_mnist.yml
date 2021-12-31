@@ -1,0 +1,37 @@
+#### training:
+loss: "dsm"
+rank: 50
+
+model:
+  ema: False
+  ema_rate: 0.999
+  sigma_begin: 1
+  sigma_end: 0.01
+  num_classes: 1
+  batch_norm: false
+  ### configurations for MNIST
+  ngf: 64
+
+## MNIST
+dataset: MNIST
+data_dir: data/mnist
+channel: 1
+img: 28
+
+# for unet configuration
+data:
+  dataset: "MNIST"
+  image_size: 28
+  channels: 1
+  random_flip: false
+
+batch_size: 40 #80
+lr: 0.0002
+lr_decay: 0.999995
+max_epochs: 1000
+
+#### logging
+print_every: 50
+save_interval: 10
+
+
